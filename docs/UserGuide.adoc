@@ -1,4 +1,4 @@
-= AddressBook Level 4 - User Guide
+= MakanBook - User Guide
 :site-section: UserGuide
 :toc:
 :toc-title:
@@ -18,7 +18,7 @@ By: `Team SE-EDU`      Since: `Jun 2016`      Licence: `MIT`
 
 == Introduction
 
-AddressBook Level 4 (AB4) is for those who *prefer to use a desktop app for managing contacts*. More importantly, AB4 is *optimized for those who prefer to work with a Command Line Interface* (CLI) while still having the benefits of a Graphical User Interface (GUI). If you can type fast, AB4 can get your contact management tasks done faster than traditional GUI apps. Interested? Jump to the <<Quick Start>> to get started. Enjoy!
+MakanBook is for those who *prefer to use a desktop app to search for restaurants within NUS to eat at alone or with friends*. More importantly, MakanBook is *optimized for those who prefer to work with a Command Line Interface* (CLI) while still having the benefits of a Graphical User Interface (GUI). MakanBook also allows users to add and manage friends and groups, start private and public jios, see which jios fit your NUS timetable and so much more! Interested? Jump to the <<Quick Start>> to get started. Enjoy!
 
 == Quick Start
 
@@ -32,6 +32,9 @@ image::Ui.png[width="790"]
 .  Type the command in the command box and press kbd:[Enter] to execute it. +
 e.g. typing *`help`* and pressing kbd:[Enter] will open the help window.
 .  Some example commands you can try:
+
+*TODO*
+*COMMANDS TO BE CHANGED ONCE FINALISED*
 
 * *`list`* : lists all contacts
 * **`add`**`n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01` : adds a contact named `John Doe` to the Address Book.
@@ -49,6 +52,8 @@ e.g. typing *`help`* and pressing kbd:[Enter] will open the help window.
 * Words in `UPPER_CASE` are the parameters to be supplied by the user e.g. in `add n/NAME`, `NAME` is a parameter which can be used as `add n/John Doe`.
 * Items in square brackets are optional e.g `n/NAME [t/TAG]` can be used as `n/John Doe t/friend` or as `n/John Doe`.
 * Items with `…`​ after them can be used multiple times including zero times e.g. `[t/TAG]...` can be used as `{nbsp}` (i.e. 0 times), `t/friend`, `t/friend t/family` etc.
+*TODO*
+*CHANGE THIS STATMENT BELOW IF NEEDED*
 * Parameters can be in any order e.g. if the command specifies `n/NAME p/PHONE_NUMBER`, `p/PHONE_NUMBER n/NAME` is also acceptable.
 ====
 
@@ -234,6 +239,302 @@ There is no need to save manually.
 
 _{explain how the user can enable/disable data encryption}_
 // end::dataencryption[]
+
+
+*TODO*
+*NEW COMMANDS ADDED FROM HERE*
+
+=== Write Review For Restaurant: `writeReview`
+
+Allows user to write reviews for a specific restaurant. +
+Format: `writeReview INDEX s/SCORE r/REVIEW`
+
+Examples:
+
+* `writeReview 3 s/3 r/Disgusting, I’ve seen better food in prisons`
+
+=== List Visited Restaurant: `listVisitedRestaurants`
+
+Returns a list of all the restaurants the User has been to before. +
+Format: `listVisitedRestaurants`
+
+=== Add Visited Restaurant: `addVisitedRestaurants`
+
+Allows user to add a restaurant into his visited restaurant list with date, price, rating/score and meal consumed. +
+Format: `addVisitedRestaurants r/RESTAURANT_ID t/DATE p/PRICE s/SCORE m/MEAL_CONSUMED`
+
+Examples:
+
+* `addVisitedRestaurants r/COM1231 t/2011-11-11 p/3 s/4 m/Lemon Chicken Rice`
+
+=== Add Favourites: `addFavourite`
+
+Allows User to add a restaurant into his account’s favourites. +
+Format: `addFavourite r/RESTAURANT ID s/Score`
+
+Examples:
+
+* `addFavourite r/COM1231 s/4`
+
+=== List Favourites: `listFavourites`
+
+Allows User to list the restaurants he has entered into his favourites. +
+Format: `listFavourites`
+
+=== Finding people to eat with: `createJio`
+
+Users can find other users to eat with through inviting users. “createJio” creates a jio that is added to the global list of jios. +
+Format: `createJio n/NAME d/DATE t/TIME p/PLACE [n/NUMBER OF PEOPLE] [--private]`
+
+****
+* Jio -- an invitation to hang out.
+* Name, date, time, place must be provided. The other parameters are optional.
+* All users will be able to view the list of jios, unless the user specifies that it is a private jio. If --private tag is added, the jio is only visible to friends.
+****
+
+Examples:
+
+* `createJio n/MALA!!! d/270918 t/1200 p/FineFood n/4`
+* `createJio n/saporeFriends d/010118 t/1800 p/Sapore --friends`
+
+=== Joining an existing jio: `joinJio`
+
+Users can join an existing jio to find people to eat with, without having to create one of their own. +
+Format: `joinJio NAME`
+
+****
+* User has to indicate the name of the jio.
+****
+
+Examples:
+
+* `joinJio MALA!!`
+
+=== Deleting old jios: `deleteJio`
+
+Users can specify a jio to delete. All old jios are automatically deleted. +
+Format: `deleteJio NAME`
+
+Examples:
+
+* `deleteJio MALA!!`
+
+=== View public and private jios: `listJio`
+
+Users can view all jios available. “listJio” will display all public jios and all private jios. +
+Format: `listJio`
+
+=== Adding friends: `addFriend`
+
+A User will send a friend request to another User who will then have to accept the friend request. +
+Format: `addFriend USERNAME`
+
+Examples:
+
+* `addFriend Meena567`
+
+=== Accept friend request: `acceptFriend`
+
+A User can accept a friend request of another User so that the pair of them can become friends. +
+Format: `acceptFriend NAME`
+
+Examples:
+
+* `acceptFriend Meena567`
+
+=== Delete friend request: `deleteFriendRequest`
+
+A User can delete friend request of another User whom they might not know. +
+Format: `deleteFriendRequest USERNAME`
+
+Examples:
+
+* `deleteFriendRequest Meena567`
+
+=== Adding groups: `addGroup`
+
+A User will create a group and send out invitations to all the other users, which they will then have to accept to join the group.  +
+Format: `addGroup GROUPNAME [Users… USERNAMES]`
+
+****
+* Every group will automatically add the user creating the group.
+****
+
+Examples:
+
+* `addGroup onlyMe`
+* `addGroup CS2103, chelchia, evanmok2401, katenhy, yewwoei`
+
+=== Accepting group requests: `acceptGroup`
+
+A User can accept the invitation to join a group. +
+Format: `acceptGroup GROUPNAME`
+
+Examples:
+
+* `acceptGroup CS2103`
+
+=== Deleting group requests: `deleteGroupRequest`
+
+A User can choose to delete the group request should they not want to join the group. +
+Format: `deleteGroupRequest GROUPNAME`
+
+Examples:
+
+* `deleteGroupRequest CS2103`
+
+=== Deleting groups: `deleteGroup`
+
+A User can leave a group and they will be removed from the group. +
+Format: `deleteGroup GROUPNAME`
+
+Examples:
+
+* `deleteGroup CS2103`
+
+=== Recommend mutual friends: `findMutualFriends`
+
+A User can find other users based on their mutual friends. +
+Format: `findMutualFriends`
+
+=== List all friends: `listFriends `
+
+A User can list all his friends. This method will internally call upon a list (Arraylist <Object>) method. +
+Format: `listFriends`
+
+=== List all groups: `listGroups`
+
+A User can list all his groups. This method will internally call upon a list (Arraylist <Object>) method. +
+Format: `listGroups`
+
+=== List all friend requests: `listFriendRequests`
+
+A User can list all his friend requests. This method will internally call upon a list (Arraylist <Object>) method. +
+Format: `listFriendRequests`
+
+=== List all group requests: `listGroupRequests`
+
+A User can list all his group requests. This method will internally call upon a list (Arraylist <Object>) method. +
+Format: `listGroupRequest`
+
+===  Block unavailable timeslot manually: `blockTime`
+
+Blocks out that timeslot in the user’s timetable to signify that he is busy and not available to eat. +
+Format: `blockTime WEEKNUMBER DAY HHHH HHHH`
+
+Examples:
+
+* `blockTime week5 tues 1800 1900`
+
+===  Free timeslot manually: `freeTime`
+
+Frees up that timeslot in the user’s timetable to signify that he is free and available to eat. +
+Format: `freeTime WEEKNUMBER DAY HHHH HHHH`
+
+Examples:
+
+* `freeTime week5 tues 1900 2100`
+
+===  See Free Time: `listTime`
+
+Views the list of free time to eat on those dates. +
+Format: `listTime WEEKNUMBER`
+
+Examples:
+
+* `listTime week5`
+
+===  Find jios that fit a user’s timetable for a given NUS academic week: `findJio`
+
+Views the list of free time to eat on those dates. +
+Format: `findJio WEEKNUMBER`
+
+Examples:
+
+* `findJio week8`
+
+===  Find common timeslots with friends: `findTime`
+
+Find common eating timeslots with a list of friends. +
+Format: `findTime [w/week number] [f/name of friend] [f/name of friend] ….`
+
+Examples:
+
+* `findTime week6 f/Aiden  f/Chelsea f/Evan Mok f/Meena f/Kate`
+
+===  Add NUSMODS schedule to block out calendar: `addNUSMODS`
+
+Block out schedules on the timetable using a NUSMODS link. +
+Format: `addNUSMODS NUSMODSLINK`
+
+Examples:
+
+* `addCalendar nusmods.com/g91j3g08sdgl13`
+
+===  Add Google Calendar schedule to block out calendar: `addCalendar`
+
+Block out schedules on the timetable using a google account. +
+Format: `addCalendar USERNAME PASSWORD`
+
+Examples:
+
+* `addCalendar aiden@gmail.com aidenpassword`
+
+===  Sent add debt request: `addDebt`
+
+A user will send a debt request to another user with specific amount. +
+Format: `addDebt USERNAME AMOUNT`
+
+Examples:
+
+* `addDebt Kate123 4.30`
+
+===  Sent clear debt request: `clearDebt`
+
+A user can send a clear request to another user to clear the debt and the amount will be balanced off. +
+Format: `clearDebt NAME AMOUNT`
+
+Examples:
+
+* `clearDebt Kate123 4.30`
+
+===  Accept debt request: `acceptDebtRequest`
+
+A user can accept (add or clear) request from another user, then a record will be created to both of their account with the each other name, amount, and request ID. +
+Format: `acceptDebtRequest NAME REQUESTID`
+
+Examples:
+
+* `acceptDebtRequest Kate123 hxas78`
+
+===  Delete debt request: `deleteDebtRequest`
+
+A user can delete request send by other user if it is a wrong request. +
+Format: `deleteDebtRequest USERNAME REQUESTID`
+
+Examples:
+
+* `deleteDebtRequest Kate123 hxas78`
+
+===  List debt history: `listDebtHistory`
+
+A user can list all his transaction, including the Transcation ID, user, amount and type and status. +
+Format: `listDebtHistory`
+
+===  List debtor: `listDebtor`
+
+A User can list all his debtor, including the user and amount. +
+Format: `listDebtor`
+
+===  List creditor: `listCreditor`
+
+A User can list all his creditors, including the user and amount. +
+Format: `listCreditor`
+
+===  List Debt Request: `listDebtRequest`
+
+A User can list all received request, including the type, request ID, user and amount. +
+Format: `listDebtRequest`
 
 == FAQ
 

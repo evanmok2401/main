@@ -4,53 +4,55 @@
 :imagesDir: images
 :stylesDir: stylesheets
 
-AddressBook - Level 4 was developed by the https://se-edu.github.io/docs/Team.html[se-edu] team. +
-_{The dummy content given below serves as a placeholder to be used by future forks of the project.}_ +
+Makan Book - A restaurant guide and application for NUS diners. Adapted and modified from Address Book - Level 4 +
+which was developed by the https://se-edu.github.io/docs/Team.html[se-edu] team and enhanced by the
+https://github.com/orgs/nus-cs2103-AY1819S1/teams[NUS] teaching team. +
 {empty} +
 We are a team based in the http://www.comp.nus.edu.sg[School of Computing, National University of Singapore].
 
 == Project Team
 
-=== John Doe
-image::damithc.jpg[width="150", align="left"]
-{empty}[http://www.comp.nus.edu.sg/~damithch[homepage]] [https://github.com/damithc[github]] [<<johndoe#, portfolio>>]
-
-Role: Project Advisor
-
-'''
-
-=== John Roe
-image::lejolly.jpg[width="150", align="left"]
-{empty}[http://github.com/lejolly[github]] [<<johndoe#, portfolio>>]
+=== Mok Ken Han Evan
+image::evanmok2401.jpg[width="150", align="left"]
+{empty}[https://github.com/evanmok2401[github]]
 
 Role: Team Lead +
-Responsibilities: UI
+Responsibilities: Testing, In charge of Overall Architecture
 
 '''
 
-=== Johnny Doe
-image::yijinl.jpg[width="150", align="left"]
-{empty}[http://github.com/yijinl[github]] [<<johndoe#, portfolio>>]
+=== Aiden Low Yew Woei
+image::yewwoei.jpg[width="150", align="left"]
+{empty} [https://github.com/yewwoei[github]]
 
 Role: Developer +
-Responsibilities: Data
+Responsibilities: Integration, In charge of Logic Component
 
 '''
 
-=== Johnny Roe
-image::m133225.jpg[width="150", align="left"]
-{empty}[http://github.com/m133225[github]] [<<johndoe#, portfolio>>]
+=== Meenakshi Solayappan
+image::meena567.jpg[width="150", align="left"]
+{empty}[https://github.com/meena567[github]]
 
-Role: Developer +
-Responsibilities: Dev Ops + Threading
+Role: Developer
+Responsibilities: Documentation, Code Quality, In charge of Storage Component
 
 '''
 
-=== Benson Meier
-image::yl_coder.jpg[width="150", align="left"]
-{empty}[http://github.com/yl-coder[github]] [<<johndoe#, portfolio>>]
+=== Chelsea Chia Jia Hwa
+image::chelchia.jpg[width="150", align="left"]
+{empty}[https://github.com/chelchia[github]]
 
 Role: Developer +
-Responsibilities: UI
+Responsibilities: Deliverables and Deadline, In charge of Model Component
+
+'''
+
+=== Ng Hoi Ying Kate
+image::katenhy.jpg[width="150", align="left"]
+{empty}[http://github.com/katenhy[github]]
+
+Role: Developer +
+Responsibilities: Scheduling and Tracking, In charge of UI Component
 
 '''

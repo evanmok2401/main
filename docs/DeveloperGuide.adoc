@@ -1,4 +1,4 @@
-= AddressBook Level 4 - Developer Guide
+= MakanBook - Developer Guide
 :site-section: DeveloperGuide
 :toc:
 :toc-title:
@@ -14,7 +14,7 @@ ifdef::env-github[]
 endif::[]
 :repoURL: https://github.com/CS2103-AY1819S1-W10-2/main
 
-By: `Team SE-EDU`      Since: `Jun 2016`      Licence: `MIT`
+By: `Team W10-2`      Since: `Jun 2016`      Licence: `MIT`
 
 == Setting up
 
@@ -815,13 +815,13 @@ See this https://github.com/se-edu/addressbook-level4/pull/599[PR] for the step-
 
 *Target user profile*:
 
-* has a need to manage a significant number of contacts
-* prefer desktop apps over other types
-* can type fast
-* prefers typing over mouse input
-* is reasonably comfortable using CLI apps
+* Student diners aiming to find eating places around the National University of Singapore
 
-*Value proposition*: manage contacts faster than a typical mouse/GUI driven app
+*Value proposition*:
+
+With the Restaurant Book, users can find restaurants based on their preferences such as cuisine or budget. This makes the process of deciding what to eat easier. At the same time, users can give reviews of the restaurants and can view reviews of other users as well.
+Additionally, Users can add other users as friends and form groups so that they can have private food “Jios”/ sessions. Public food “Jios”, which is open to the whole of NUS, is available as well for the User. Additionally, the User can get recommendations for friends based on mutual friends or others who eat at the same restaurants. Users of the addressbook can also include their own timetable to help them organise jios and eating sessions with friends. Lastly, a user can add restaurants apart from the existing NUS restaurants in their own private Restaurant book. Through the features of the Restaurant Book, we hope the dining experience in NUS can be enhanced.
+
 
 [appendix]
 == User Stories
@@ -831,17 +831,72 @@ Priorities: High (must have) - `* * \*`, Medium (nice to have) - `* \*`, Low (un
 [width="59%",cols="22%,<23%,<25%,<30%",options="header",]
 |=======================================================================
 |Priority |As a ... |I want to ... |So that I can...
-|`* * *` |new user |see usage instructions |refer to instructions when I forget how to use the App
+|`* * *` |Student who hates eating alone |Find people to eat with or invite people to eat with me |Not eat alone
 
-|`* * *` |user |add a new person |
+|`* * *` |Student with many friends |Create a food jio |Not have to text all my friends or create a chat group just for eating
 
-|`* * *` |user |delete a person |remove entries that I no longer need
+|`* * *` |Diner |Be able to write Review for Restaurants |Let others know what is good and recommended for a more informed decision
 
-|`* * *` |user |find a person by name |locate details of persons without having to go through the entire list
+|`* * *` |Diner |Be able to view the previous restaurants I’ve been to |Remember what I have eaten and my experience with the Restaurant
 
-|`* *` |user |hide <<private-contact-detail,private contact details>> by default |minimize chance of someone else seeing them by accident
+|`* * *` |Diner |Be able to keep track of my favourite restaurants |Go back to those restaurants
 
-|`*` |user with many persons in the address book |sort persons by name |locate a person easily
+|`* * *` |Sociable person |Add people to my list of friends |So that they will be in my address book
+
+|`* * *` |Sociable person |Add many friends to a group |So that we have an exclusive group to start food jios in or keep track of finances
+
+|`* * *` |Busy but sociable student |Have a platform where my timetables can be added |My friends can find a time to eat with me
+
+|`* * *` |Busy but sociable student |I want to see when my friends are free to eat |So that i can eat with my friends
+
+|`* * *` |Person who always eat as a group |Know how much should each of us pay |We can clarify the debt
+
+|`* * *` |Person who always eat as a group |Mark down our payment and balance them off |Reduce the trouble of paying off each time
+
+|`* * *` |Petty friend |Delete friends |I can only keep track of friends that I am interested in
+
+|`* * *` |user |View all my friend requests |I can decide which friend requests to accept and which ones to delete
+
+|`* * *` |user |View all my group requests |I can decide which group requests to accept and which ones to delete
+
+|`* *` |Diner |Have outdated jios delete automatically |Have an updated view of jios
+
+|`* *` |Paranoid person |Choose to accept or delete friend requests |I can better protect my privacy
+
+|`* *` |Paranoid person |Choose which group requests to accept and delete |I can better protect my privacy
+
+|`* *` |Student who wants to go for jios |I want to find the jios that fit my timetable |So that i can easily find a suitable jio without skimming through everything
+
+|`* *` |User |I want to be able to delete my account and when I want to quit using the app |Have my Privacy because #Privacy
+
+|`* *` |Person who owes other and is also owed |Simplify my debts |Save the hassle of paying and collecting from multiple people
+
+|`* *` |Save the hassle of paying and collecting from multiple people |Delete groups |When I view all the activities happening, I can view the groups that I’m interested in
+
+|`*` |Student who joins a jio |Be able to suggest alternative timings/places etc |Fit my timetable better
+
+|`*` |Selective friend |Create private jios for only my friends |Have a private meal
+
+|`*` |Sociable person |Get recommendations for friends based on mutual friends |So that I can have more friends
+
+|`*` |Time-strapped student |I want to add my times tables easily using google docs integration |So that i can easily find a common time slot with friends
+
+|`*` |Time-strapped student |I want to add my times tables easily using nusmods integration |So that i can easily find a common time slot with friends
+
+|`*` |Diner |Be able to send recommendations on certain restaurants |Notify my friends where I have eaten at
+
+|`*` |Diner |Keep track of visited restaurants outside of NUS |Have more variety in the restaurant choices
+
+|`*` |Financially strapped student |Set the address book to sort the restaurant by budget |Find the restaurant that I can avoid
+
+|`*` |Busy diner that travels around |Sort by faculty |Eat where I am heading to
+
+|`*` |Time-strapped student |Have my filter settings saved |Save time from applying the same filter each time
+
+|`*` |Vegetarian diner |Set the address book to always eliminate the non-veg restaurant |Always find the restaurant provides vegetarian food
+
+|`*` |Boutique food lover |Use the address book to find relevant restaurants for me |Easily find a restaurant suits my taste like Chinese, Western, Malay, Indian, Korean, Japanese, Vietnamese, Others
+
 |=======================================================================
 
 _{More to be added}_
@@ -852,30 +907,148 @@ _{More to be added}_
 (For all use cases below, the *System* is the `AddressBook` and the *Actor* is the `user`, unless specified otherwise)
 
 [discrete]
-=== Use case: Delete person
+=== Use case #1: Meeting with friends to eat together at a place in NUS
+
+*System*: Food Jio system
+
+*Actor*: User, friends
 
 *MSS*
 
-1.  User requests to list persons
-2.  AddressBook shows a list of persons
-3.  User requests to delete a specific person in the list
-4.  AddressBook deletes the person
+1.  User creates a jio with a unique name and specifies the time, date, place to meet.
+2. System adds jio to public list of jios.
+3. Friend views the public list of all jios.
+4. Friend joins a jio.
+5. Jio is deleted when jio is over.
+
 +
 Use case ends.
 
 *Extensions*
 
 [none]
-* 2a. The list is empty.
+* 1a. System detects an error in the entered data.
+** 1a1. System displays error message.
 +
 Use case ends.
 
-* 3a. The given index is invalid.
+* 1a. System detects an error in the entered data.
+** 1a1. System displays error message.
 +
-[none]
-** 3a1. AddressBook shows an error message.
+Use case ends.
+
+* 3a. User requests for the jio to be private
+** 3a1. Jio is only visible to friends of the user who added.
+** 3a2. Friend view the private list of jios on top of the public list of jios.
 +
-Use case resumes at step 2.
+Use case resumes from step 4.
+
+[discrete]
+=== Use case #2: Adding a Review to a Restaurant Visited
+
+*System*: Restaurant review system
+
+*Actor*: User
+
+*MSS*
+
+1. User eats at a Restaurant and finds the restaurant (with List/Find function) in NUS
+2. System returns the list of Restaurants for User to choose from
+3. User chooses the restaurant using the index and writes a review for the particular restaurant that he has chosen
+4. System checks whether review is valid
+5. System adds the review to the restaurant
+
+*Extensions:*
+
+* 4a. System detects an error in the entered data.
+** 4a1. System displays a message on how the command should be used
++
+Use case ends.
+
+[discrete]
+=== Use case #3: Adding friends and groups
+
+*System*: Friend and group system
+
+*Actor*: User, friends
+
+*MSS*
+1. User adds friend or different users to a group with a unique name.
+2. Other user can view all requests made to him.
+3. Other user in question chooses whether to accept or delete the request.
+4. The other user chooses to accept the request, they will now have a friendship or be added to the group.
+5. User can view all friends and groups through a list.
+
+*Extensions:*
+
+* 1a. System detects an error in the entered data.
+** 1a1. System displays a message on how the command should be used
++
+Use case ends.
+
+* 3a. System detects an error in the entered data.
+** 3a1. System displays a message on how the command should be used
++
+Use case ends.
+
+* 4a. Other user chooses to delete request.
+** 4a1. The other user will not have a friendship or be added to the group.
++
+Use case resumes from step 5.
+
+[discrete]
+=== Use case #4: Finding a common timeslot to eat with friends
+
+*System*: Timetable system
+
+*Actor*: User
+
+*MSS*
+1. Student blocks out unavailable times and dates.
+2. Timetable System blocks out the date and prints an OK status.
+3. Step 1-2 are repeated until student sets up his timetable system.
+4. Student requests to find a common timeslot for eating with friend
+5. Timetable System finds the common free times across all the friend’s schedules and displays to user.
+
+*Extensions:*
+
+* 1a. System detects an error in the entered data.
+** 1a1. System displays a message on how the command should be used
++
+Use case ends.
+
+[discrete]
+=== Use case #5: Settling payment for a group meal
+
+*System*: Payment splitting system
+
+*Actor*: User, friends
+
+*MSS*
+1. User creates a debt request to the whole group, with the total meal fee.
+2. System splits the fee into equal amounts
+3. System sends a debt request to every other member in the group.
+4. Debtor accepts the debt request.
+5. A debt record is created to both debtor and creditor.
+6. After the debt is paid, debtor creates a clear request to user.
+7. System sends clear request to user.
+8. User accepts clear request.
+9. System records that the debt is paid.
+
+*Extensions:*
+
+* 4a. Debtor rejects the request.
+** 4a1. Debt request is deleted.
+** 4a2. System sends notification to the request sender.
++
+Use case ends.
+
+* 8a. User rejects the request.
+** 11a1. Clear request is deleted.
+** 11a2. System sends notification to the request sender.
++
+Use case ends.
+
 
 _{More to be added}_
 
@@ -885,6 +1058,9 @@ _{More to be added}_
 .  Should work on any <<mainstream-os,mainstream OS>> as long as it has Java `9` or higher installed.
 .  Should be able to hold up to 1000 persons without a noticeable sluggishness in performance for typical usage.
 .  A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse.
+.  It is not secure as there is no encryption of password when storing them
+.  Application and stored data is only available on one computer. The different users have to use the same application on the same computer.
+
 
 _{More to be added}_
 
@@ -896,6 +1072,9 @@ Windows, Linux, Unix, OS-X
 
 [[private-contact-detail]] Private contact detail::
 A contact detail that is not meant to be shared with others
+
+[[jio]] Jio::
+An event for users to meet up with friends (over food)
 
 [appendix]
 == Product Survey
