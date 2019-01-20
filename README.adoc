@@ -4,7 +4,6 @@ ifdef::env-github,env-browser[:relfileprefix: docs/]
 
 https://travis-ci.org/CS2103-AY1819S1-W10-2/main[image:https://travis-ci.org/CS2103-AY1819S1-W10-2/main.svg?branch=master[Build Status]]
 https://ci.appveyor.com/project/yewwoei/main[image:https://ci.appveyor.com/api/projects/status/3boko2x2vr5cc3w2?svg=true[Build status]]
-https://coveralls.io/github/CS2103-AY1819S1-W10-2/main?branch=master[image:https://coveralls.io/repos/github/CS2103-AY1819S1-W10-2/main/badge.svg?branch=master[Coverage Status]]
 
 ifdef::env-github[]
 image::docs/images/Ui.png[width="600"]
@@ -16,7 +15,7 @@ endif::[]
 
 * MakanBook is a desktop Restaurant application for students. It has a GUI but most of the user interactions happen using a CLI (Command Line Interface).
 * The target user of this application is student diners aiming to find eating places around the National University of Singapore.
-* Users of MakanBook not only have access to restaurant features, but also social features: the ability to create groups, schedule meetings, create jios, and manage finances after meals.
+* Users of MakanBook not only have access to the list of restaurants, but also be able to use social features such as the ability to create groups, schedule meetings, create jios, and manage finances after meals.
 
 == Site Map
 
@@ -24,14 +23,6 @@ endif::[]
 * <<DeveloperGuide#, Developer Guide>>
 * <<AboutUs#, About Us>>
 * <<ContactUs#, Contact Us>>
-
-== Product Portfolio Pages
-* <<team/chelchia#, CHELSEA CHIA JIA HWA>>
-* <<team/yewwoei#, LOW YEW WOEI>>
-* <<team/evanmok2401#, MOK KEN HAN, EVAN>>
-* <<team/NgHoiYing#, NG HOI YING>>
-* <<team/meena567#, SOLAYAPPAN MEENAKSHI>>
-
 
 == Acknowledgements
 
